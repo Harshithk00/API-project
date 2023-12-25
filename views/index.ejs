@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API project</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body>
+
+    <div id="background">
+        <div id="body1">
+            <div id="apisec1">
+                <form action="/jokes" method="get" class="gridall">
+                    <button class="JokeButton">Jokes</button>
+                    <h3 class="butsidetext">For Jokes Go Here <br> </h3>
+                </form>
+            </div>
+            <div id="apisec2">
+                <form action="/get-weather" method="post" class="gridall" id="weatherForm">
+                    <input type="hidden" name="lat" id="lat">
+                    <input type="hidden" name="lon" id="lon">
+                    <button class="weatherButton" id="weatherButton">Weather</button>
+                    <h3 class="butsidetext">For Weather Report Go Here</h3>
+                </form>
+            </div>
+            <div id="apisec3">
+                <form action="/crypto" method="get" class="gridall">
+                    <button class="cryptoButton">Crypto Prices</button>
+                    <h3 class="butsidetext">For Crypto Prices Go Here</h3>
+                </form>
+            </div>
+            <div id="apisec4">
+                <form action="/UV" method="post" class="gridall" id="UVForm">
+                    <input type="hidden" name="lat1" id="lat1">
+                    <input type="hidden" name="lon1" id="lon1">
+                    <button class="UVButton" id="UVButton">UV</button>
+                    <h3 class="butsidetext">For UV Index Go Here</h3>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("weatherButton").addEventListener("click", function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    
+                    document.getElementById("lat").value = lat;
+                    document.getElementById("lon").value = lon;
+                    document.getElementById("weatherForm").submit();
+                    
+                });
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        });
+
+        document.getElementById("UVButton").addEventListener("click", function () {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    const lat1 = position.coords.latitude;
+                    const lon1 = position.coords.longitude;
+                    console.log(lon1);
+                    console.log("hello")
+                    
+                    document.getElementById("lat1").value = lat1;
+                    document.getElementById("lon1").value = lon1;
+                    document.getElementById("UVForm").submit();
+                    
+                });
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        });
+    </script>
+</body>
+
+</html>

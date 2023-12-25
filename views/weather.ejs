@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="Styles/style.css">
+
+</head>
+
+<body>
+    <div id="backgroundweather">
+        <div id="weatherres">
+            <div id="top">
+                <h1>Weather Information of <%- city %></h1>
+                <p id="latlon">Location: Latitude <%= lat %>, Longitude <%= lon %>
+                </p>
+            </div>
+        <div class="con3">
+            <div class="c1 con">
+                <p class="weathercl wea">Weather: <%= weather %>
+                </p>
+                <p class="weathercl wea">Weather description: <%= weatherdes %>
+                </p>
+            </div>
+            <div class="c2 con">
+                <p class="weathercl tem">Current Temperature: <%= temp %>°
+                </p>
+                <p class="weathercl tem">Feels Like: <%= feels %>°
+                </p>
+                <p class="weathercl tem">Today Min Temperature: <%= temp_min %>°
+                </p>
+                <p class="weathercl tem">Today Max Temperature: <%= temp_max %>°
+                </p>
+            </div>
+            <div class="c3 con">
+                <p class="weathercl humi">Humidity: <%= humidity %>
+                </p>
+                <p class="weathercl win">Wind speed: <%= wind %>
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

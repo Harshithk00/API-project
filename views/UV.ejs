@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UV</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body id="UVbody"  >
+    <% if (locals.UV){%>
+        <div id="UVres">
+            <h1>UV Index </h1>
+            <div id="UVreport">
+                <p> UV Index = <%= UV %> </p>
+                <p> Today Max UV Index= <%= UVmax %> </p>
+            </div>
+        
+        </div>
+    <%}else{%>
+        <div id="UVres">
+            <h1>Sorry 50-Request/Day Only<br> &nbsp&nbsp&nbsp&nbsp&nbsp&nbspTry Again Tomorrow  </h1>
+            
+    <%}%>
+
+
+</body>
+
+</html>
